@@ -1,0 +1,20 @@
+aruco_explorer_node:
+  ros__parameters:
+    base_frame: "base_link"
+    odom_frame: "odom"   # ( "map" if you using a map frame)
+
+    # Scan behaviour (collect IDs from aruco_detections)
+    scan_angular_vel: 1.0
+    scan_duration: 40.0
+
+    # run OpenCV detectMarkers on the real camera stream
+    image_topic: "/camera/image"
+
+    aruco_dictionary_id: 16   # cv::aruco::DICT_ARUCO_ORIGINAL
+
+    # Centering control
+    pixel_angular_gain: 0.003
+    center_tolerance_px: 10
+    search_angular_vel: 0.8
+    max_angular_vel: 1.0
+

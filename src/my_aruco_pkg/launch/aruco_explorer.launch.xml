@@ -1,0 +1,36 @@
+<launch version="0.1.1">
+
+  <!-- Start the ArUco tracker FIRST -->
+  <include file="$(find-pkg-share aruco_opencv)/launch/aruco_tracker.launch.xml"/>
+
+  <!-- Delay explorer node startup -->
+  <timer period="4.0">
+    <node
+      pkg="my_aruco_pkg"
+      exec="aruco_explorer_node"
+      name="aruco_explorer_node"
+      output="screen">
+      <param from="$(find-pkg-share my_aruco_pkg)/config/aruco_explorer.yaml" />
+    </node>
+  </timer>
+
+  <!-- Tracker debug image viewer -->
+  <node
+    pkg="rqt_image_view"
+    exec="rqt_image_view"
+    name="aruco_tracker_debug_view"
+    output="screen">
+    <param name="image_topic" value="/aruco_tracker/debug"/>
+  </node>
+
+  <!-- Explorer overlay image viewer  -->
+  <node
+    pkg="rqt_image_view"
+    exec="rqt_image_view"
+    name="aruco_explorer_overlay_view"
+    output="screen">
+    <param name="image_topic" value="/aruco_explorer/marker_image"/>
+  </node>
+
+</launch>
+
