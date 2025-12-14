@@ -19,6 +19,10 @@ each marker, the robot rotates until the marker appears in the camera image and 
 the marker is centered in the image. When the marker is centered, a new image is published on a custom
 topic with a circle drawn around the detected marker.
 
+<p align="center">
+  <img src="/aruco_explorer_demo.png" width="800">
+</p>
+
 The same behaviour is repeated for all detected markers until the task is completed.
 
 
