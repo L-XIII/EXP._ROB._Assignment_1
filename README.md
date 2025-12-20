@@ -5,6 +5,10 @@ Group members
 
 
 ---
+# Video
+
+[Screencast from 2025-12-17 16-42-13.webm](https://github.com/user-attachments/assets/85223d32-dc02-4de2-a509-7f30f34e6ee0)
+
 
 # ArUco Explorer Node
 
@@ -143,3 +147,7 @@ ros2 launch bme_gazebo_sensors spawn_robot.launch.py
 ```bash
 ros2 launch my_aruco_pkg aruco_explorer.launch.xml
 ```
+
+
+
+
